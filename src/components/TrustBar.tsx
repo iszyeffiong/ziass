@@ -42,9 +42,9 @@ export function TrustBar() {
   const scrollItems = [...certs, ...certs, ...certs, ...certs]
 
   return (
-    <section className="bg-[#0f172a] text-white py-12 overflow-hidden border-y border-white/10 dark:bg-[#0b1220] dark:border-white/10">
+    <section className="bg-white text-black py-12 overflow-hidden border-y border-black/10 dark:bg-[#0b1220] dark:text-white dark:border-white/10">
       <div className="max-w-7xl mx-auto px-6 mb-8 text-center md:text-left">
-        <p className="text-[12px] font-extrabold text-white/40 uppercase tracking-[0.25em] dark:text-white/40">
+        <p className="text-[12px] font-extrabold text-black/60 uppercase tracking-[0.25em] dark:text-white/80">
           Trusted & Certified By
         </p>
       </div>
@@ -82,8 +82,8 @@ export function TrustBar() {
         </div>
 
         {/* Soft edge masks */}
-        <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-[#0f172a] to-transparent z-20 pointer-events-none dark:from-[#0b1220]" />
-        <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-[#0f172a] to-transparent z-20 pointer-events-none dark:from-[#0b1220]" />
+        <div className="absolute inset-y-0 left-0 w-48 bg-gradient-to-r from-white to-transparent z-20 pointer-events-none dark:from-[#0b1220]" />
+        <div className="absolute inset-y-0 right-0 w-48 bg-gradient-to-l from-white to-transparent z-20 pointer-events-none dark:from-[#0b1220]" />
       </div>
     </section>
   )
