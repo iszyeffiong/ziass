@@ -31,7 +31,7 @@ export function AboutSection() {
             <span className="text-sky-500">Industry Practice.</span>
           </h3>
         </div>
-        <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
+        <p className="text-black dark:text-slate-300 text-lg leading-relaxed">
           At ZIASS Limited, we bridge the gap between academic research and
           real-world security operations. Our unique approach ensures that your
           business is not just compliant, but genuinely resilient against
@@ -45,7 +45,7 @@ export function AboutSection() {
           ].map((item, i) => (
             <li
               key={i}
-              className="flex items-start gap-4 text-slate-700 dark:text-slate-200 font-medium"
+              className="flex items-start gap-4 text-black dark:text-slate-200 font-medium"
             >
               <div className="mt-1 bg-sky-100 dark:bg-sky-900 p-1.5 rounded-full flex-shrink-0 shadow-sm border border-sky-200 dark:border-sky-800">
                 <BadgeCheck className="w-5 h-5 text-sky-600 dark:text-sky-400" />

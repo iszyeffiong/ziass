@@ -70,10 +70,10 @@ export function TrustBar() {
                 )}
               </div>
               <div className="flex flex-col">
-                <span className="text-2xl font-black text-white/20 tracking-tighter group-hover/item:text-white transition-colors duration-300">
+                <span className="text-2xl font-black text-black dark:text-white tracking-tighter transition-colors duration-300">
                   {c.abbr}
                 </span>
-                <span className="text-[10px] text-white/10 group-hover/item:text-white/40 transition-colors duration-300 font-bold uppercase tracking-widest whitespace-nowrap">
+                <span className="text-[10px] font-bold uppercase tracking-widest whitespace-nowrap text-black dark:text-white transition-colors duration-300">
                   {c.full}
                 </span>
               </div>

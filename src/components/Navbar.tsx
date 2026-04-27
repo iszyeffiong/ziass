@@ -6,9 +6,9 @@ type ThemeMode = 'light' | 'dark'
 
 const navLinks = [
   { label: 'Home', href: '/' },
-  { label: 'About Us', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'About Us', href: '/#about' },
+  { label: 'Services', href: '/#services' },
+  { label: 'Contact', href: '/#contact' },
 ]
 
 export function Navbar() {
@@ -19,15 +19,10 @@ export function Navbar() {
   useEffect(() => {
     try {
       const stored = window.localStorage.getItem('ziass-theme')
-      const systemDark = window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches
       const nextTheme: ThemeMode =
         stored === 'light' || stored === 'dark'
           ? stored
-          : systemDark
-            ? 'dark'
-            : 'light'
+          : 'light'
 
       setTheme(nextTheme)
       document.documentElement.classList.toggle('dark', nextTheme === 'dark')
@@ -118,10 +113,10 @@ export function Navbar() {
 
           <Link
             // @ts-ignore - Type Checks
-            to="#contact"
+            to="/#contact"
             className="hidden lg:inline-flex btn btn-dark px-6 py-2.5 text-[13.5px]"
           >
-            Challenge Us
+            Contact Us
           </Link>
 
           <button
@@ -163,11 +158,11 @@ export function Navbar() {
             })}
 
             <Link
-              to="#contact"
+              to="/#contact"
               onClick={() => setMobileOpen(false)}
               className="btn btn-primary mt-4 w-full px-6 py-3.5 text-[15px]"
             >
-              Challenge Us
+              Contact Us
             </Link>
           </div>
         </div>

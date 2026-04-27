@@ -1,6 +1,8 @@
 import { createFileRoute, Link, notFound } from '@tanstack/react-router'
 import { services } from '../../data/services'
 import { ArrowLeft, CheckCircle2 } from 'lucide-react'
+import { useState } from 'react'
+import { ContactModal } from '../../components/ContactModal'
 
 export const Route = createFileRoute('/services/$serviceId')({
   component: ServiceDetails,
@@ -15,6 +17,7 @@ export const Route = createFileRoute('/services/$serviceId')({
 
 function ServiceDetails() {
   const service = Route.useLoaderData()
+  const [contactOpen, setContactOpen] = useState(false)
 
   return (
     <div className="pt-24 pb-16 min-h-screen bg-[var(--bg)]">
@@ -79,13 +82,14 @@ function ServiceDetails() {
               <p className="text-white/80 mb-6">
                 Get in touch with our experts to discuss how we can help your business grow securely.
               </p>
-              <Link
-                to="/"
-                hash="contact"
+              <button
+                type="button"
                 className="btn btn-primary text-[15px] px-8 py-4 self-start"
+                onClick={() => setContactOpen(true)}
               >
                 Contact Us Today
-              </Link>
+              </button>
+              <ContactModal open={contactOpen} onClose={() => setContactOpen(false)} />
             </div>
           </div>
         </div>

@@ -27,7 +27,7 @@ export function PhilosophySection() {
   return (
     <section id="about" className="relative overflow-hidden">
       {/* ── ABOUT HERO ── */}
-      <div className="relative bg-[var(--navy)] text-white py-28 md:py-36">
+      <div className="relative bg-[var(--navy)] text-white py-14 md:py-20">
         {/* Background texture */}
         <div className="absolute inset-0">
           <img
@@ -54,13 +54,13 @@ export function PhilosophySection() {
       </div>
 
       {/* ── MISSION / VISION / PHILOSOPHY CARDS ── */}
-      <div className="bg-[var(--cool-gray)] py-20">
+      <div className="bg-[var(--cool-gray)] py-10">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="grid md:grid-cols-3 gap-6 -mt-32 relative z-10 mb-20">
+          <div className="grid md:grid-cols-3 gap-6 -mt-32 relative z-10 mb-10">
             {[
               { icon: Target, title: 'Our Mission', body: 'It is possible.' },
               { icon: Lightbulb, title: 'Our Vision', body: 'To be the undisputed leader in enterprise security and business innovation across Africa and globally.' },
-              { icon: ShieldCheck, title: 'What Drives Us', body: 'Our unflinching belief that "Nothing\'s impossible." We only need to Keep Thinking. Come, challenge us.' },
+              { icon: ShieldCheck, title: 'What Drives Us', body: 'Our unflinching belief that "Nothing\'s impossible." We only need to Keep Thinking. Come, Contact Us.' },
             ].map((card) => (
               <div
                 key={card.title}

@@ -62,7 +62,7 @@ export function Footer() {
             <li>
               <Link
                 // @ts-ignore - Type Checks
-                to="#about"
+                to="/#about"
                 className="hover:text-[var(--brand)] transition-colors"
               >
                 About Us
@@ -71,7 +71,7 @@ export function Footer() {
             <li>
               <Link
                 // @ts-ignore - Type Checks
-                to="#services"
+                to="/#services"
                 className="hover:text-[var(--brand)] transition-colors"
               >
                 Our Services
@@ -80,7 +80,7 @@ export function Footer() {
             <li>
               <Link
                 // @ts-ignore - Type Checks
-                to="#leadership"
+                to="/#leadership"
                 className="hover:text-[var(--brand)] transition-colors"
               >
                 Leadership Team
@@ -89,7 +89,7 @@ export function Footer() {
             <li>
               <Link
                 // @ts-ignore - Type Checks
-                to="#contact"
+                to="/#contact"
                 className="hover:text-[var(--brand)] transition-colors"
               >
                 Contact

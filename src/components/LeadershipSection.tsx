@@ -51,10 +51,10 @@ const board = [
 
 export function LeadershipSection() {
   return (
-    <section id="leadership" className="py-28 md:py-36 bg-[var(--cool-gray)]">
+    <section id="leadership" className="pt-2 pb-2 md:pt-1 md:pb-10 bg-[var(--cool-gray)]">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8">
           <span className="kicker mb-4 block">Our Team</span>
           <h2 className="text-4xl md:text-[3.25rem] font-extrabold text-[var(--text-primary)] tracking-[-0.02em] leading-tight mb-6">
             Meet the Minds Behind ZIASS
@@ -66,7 +66,7 @@ export function LeadershipSection() {
         </div>
 
         {/* Board of Directors */}
-        <div className="mb-20">
+        <div className="mb-10">
           <div className="flex items-center justify-center gap-4 mb-10">
             <div className="h-px flex-1 max-w-[60px] bg-[var(--border-subtle)]" />
             <h3 className="text-sm font-bold text-[var(--text-muted)] uppercase tracking-[0.15em]">
@@ -74,7 +74,7 @@ export function LeadershipSection() {
             </h3>
             <div className="h-px flex-1 max-w-[60px] bg-[var(--border-subtle)]" />
           </div>
-          <div className="flex flex-wrap justify-center gap-4 overflow-visible pb-40">
+          <div className="flex flex-wrap justify-center gap-4 overflow-visible pb-20">
             {board.map((m, i) => (
               <div
                 key={i}

@@ -4,10 +4,10 @@ import { services } from '../data/services'
 
 export function ServicesSection() {
   return (
-    <section id="services" className="py-28 md:py-36 section-light">
+    <section id="services" className="pt-14 pb-4 md:pt-20 md:pb-5 section-light">
       <div className="max-w-7xl mx-auto px-6">
         {/* Header */}
-        <div className="text-center max-w-3xl mx-auto mb-20">
+        <div className="text-center max-w-3xl mx-auto mb-10">
           <span className="kicker mb-4 block">Our Services</span>
           <h2 className="text-4xl md:text-[3.25rem] font-extrabold text-[var(--text-primary)] tracking-[-0.02em] leading-tight mb-6">
             Enterprise Solutions, <br className="hidden md:block" />Global Reach

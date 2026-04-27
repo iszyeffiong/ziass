@@ -15,9 +15,9 @@ export function HeroSection() {
       <div className="absolute top-0 left-0 w-[600px] h-[600px] bg-[var(--brand)]/[0.04] rounded-full blur-[120px] -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#38BDF8]/[0.05] rounded-full blur-[120px] translate-x-1/4 translate-y-1/4 pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 pt-28 pb-16 md:pt-32 md:pb-24 w-full">
+      <div className="max-w-7xl mx-auto px-6 pt-14 pb-8 md:pt-16 md:pb-12 w-full">
         <div className="grid lg:grid-cols-2 gap-16 lg:gap-12 items-center">
-          
+
           {/* ── TEXT ── */}
           <div className="max-w-xl">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[var(--brand-light)] text-[var(--brand)] text-[13px] font-bold mb-8">
@@ -35,7 +35,7 @@ export function HeroSection() {
             </p>
 
             <div className="flex flex-wrap gap-4">
-              <a href="#contact" className="btn btn-primary text-[15px] px-8 py-4">
+              <a href="#about" className="btn btn-primary text-[15px] px-8 py-4">
                 Get Started
                 <ArrowRight size={18} className="ml-2" />
               </a>

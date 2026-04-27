@@ -4,8 +4,7 @@ import {
   createRootRoute,
   Outlet,
 } from '@tanstack/react-router'
-import { TanStackRouterDevtoolsPanel } from '@tanstack/react-router-devtools'
-import { TanStackDevtools } from '@tanstack/react-devtools'
+
 import { MoonStar, SunMedium } from 'lucide-react'
 import React from 'react'
 
@@ -43,8 +42,7 @@ export const Route = createRootRoute({
           (function () {
             try {
               var stored = localStorage.getItem('ziass-theme');
-              var systemDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-              var theme = stored === 'light' || stored === 'dark' ? stored : (systemDark ? 'dark' : 'light');
+              var theme = stored === 'light' || stored === 'dark' ? stored : 'light';
               document.documentElement.classList.toggle('dark', theme === 'dark');
               document.documentElement.style.colorScheme = theme;
             } catch (e) {}
@@ -62,15 +60,10 @@ function RootComponent() {
   React.useEffect(() => {
     try {
       const stored = window.localStorage.getItem('ziass-theme')
-      const systemDark = window.matchMedia(
-        '(prefers-color-scheme: dark)',
-      ).matches
       const nextTheme =
         stored === 'light' || stored === 'dark'
           ? stored
-          : systemDark
-            ? 'dark'
-            : 'light'
+          : 'light'
 
       setTheme(nextTheme)
       document.documentElement.classList.toggle('dark', nextTheme === 'dark')
@@ -106,17 +99,7 @@ function RootComponent() {
         </main>
         <Footer />
       </div>
-      <TanStackDevtools
-        config={{
-          position: 'bottom-right',
-        }}
-        plugins={[
-          {
-            name: 'Tanstack Router',
-            render: <TanStackRouterDevtoolsPanel />,
-          },
-        ]}
-      />
+
       <Scripts />
     </RootDocument>
   )
