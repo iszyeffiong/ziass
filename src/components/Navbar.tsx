@@ -13,10 +13,12 @@ const navLinks = [
 
 export function Navbar() {
   const location = useLocation()
+  const [mounted, setMounted] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
   const [theme, setTheme] = useState<ThemeMode>('light')
 
   useEffect(() => {
+    setMounted(true)
     try {
       const stored = window.localStorage.getItem('ziass-theme')
       const nextTheme: ThemeMode =
@@ -60,23 +62,18 @@ export function Navbar() {
   }
 
   return (
-    <nav className="fixed top-0 inset-x-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-[#0B1120]/85">
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6">
-        <Link to="/" className="group flex items-center gap-2.5">
-          <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-[var(--brand)] text-lg font-extrabold leading-none text-white shadow-md shadow-[var(--brand)]/20 transition-transform duration-300 group-hover:scale-105">
-            Z
-          </div>
-          <div className="leading-tight">
-            <span className="block text-[17px] font-extrabold tracking-tight text-[var(--text-primary)]">
-              ZIASS
-            </span>
-            <span className="block -mt-0.5 text-[9px] font-bold uppercase tracking-[0.2em] text-[var(--brand)]">
-              Limited
-            </span>
-          </div>
+    <nav className="fixed top-0 inset-x-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-[#0B1120]/85" suppressHydrationWarning>
+      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6" suppressHydrationWarning>
+        <Link to="/" className="flex items-center">
+          <img 
+            src="/logo.png" 
+            alt="ZIASS Limited" 
+            className="h-10 w-auto object-contain"
+            suppressHydrationWarning
+          />
         </Link>
 
-        <div className="hidden items-center gap-9 lg:flex">
+        <div className="hidden items-center gap-9 lg:flex" suppressHydrationWarning>
           {navLinks.map((link) => {
             const active = isActive(link.href)
 
@@ -94,27 +91,29 @@ export function Navbar() {
           })}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex items-center gap-3" suppressHydrationWarning>
           <button
             type="button"
             onClick={toggleTheme}
             aria-label="Toggle theme"
             className="btn btn-secondary flex items-center gap-2 px-4 py-2.5 text-[13px] shadow-sm dark:bg-white/10 dark:text-white dark:border-white/10 dark:hover:border-white/20"
           >
-            {theme === 'dark' ? (
+            {!mounted ? (
+              <div className="w-4 h-4" /> // Placeholder to avoid mismatch
+            ) : theme === 'dark' ? (
               <SunMedium size={16} />
             ) : (
               <MoonStar size={16} />
             )}
             <span className="hidden sm:inline">
-              {theme === 'dark' ? 'Light' : 'Dark'}
+              {!mounted ? 'Theme' : theme === 'dark' ? 'Light' : 'Dark'}
             </span>
           </button>
 
           <Link
             // @ts-ignore - Type Checks
             to="/#contact"
-            className="hidden lg:inline-flex btn btn-dark px-6 py-2.5 text-[13.5px]"
+            className="!hidden lg:inline-flex btn btn-dark px-6 py-2.5 text-[13.5px]"
           >
             Contact Us
           </Link>

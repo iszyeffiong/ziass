@@ -13,9 +13,10 @@
 :root {
   color-scheme: light;
 
-  --brand: #0066cc;
-  --brand-dark: #004d99;
-  --brand-light: #e8f0fe;
+  --brand: #006837;
+  --brand-dark: #004d29;
+  --brand-light: #e6f0eb;
+  --accent-yellow: #fbb03b;
 
   --navy: #0b1120;
   --navy-soft: #151d30;
@@ -42,9 +43,10 @@
 .dark {
   color-scheme: dark;
 
-  --brand: #4da3ff;
-  --brand-dark: #1d7fe0;
-  --brand-light: rgba(77, 163, 255, 0.12);
+  --brand: #00a859;
+  --brand-dark: #008f4c;
+  --brand-light: rgba(0, 168, 89, 0.12);
+  --accent-yellow: #fbb03b;
 
   --navy: #0b1120;
   --navy-soft: #111a2e;

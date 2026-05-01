@@ -16,7 +16,7 @@ const management = [
     name: 'Dr. Tunde Ali',
     title: 'Non-Executive Director',
     bio: 'First-class medical professional with over 17 years of practice globally. Consultant in Anesthesia & Family Practice, specializing in medical IT.',
-    image: 'https://www.cybernovr.com/_next/static/media/drakin.1a9e3e83.jpg',
+    image: '/ali.jpeg',
   },
   {
     name: 'Israel Effiong',
@@ -116,12 +116,12 @@ export function LeadershipSection() {
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {management.map((m, i) => (
               <div key={i} className="card p-5 group">
-                <div className="w-full aspect-[3/4] rounded-xl overflow-hidden mb-5 bg-[var(--cool-gray)] flex items-center justify-center">
+                <div className="w-48 h-48 mx-auto rounded-full overflow-hidden mb-6 bg-[var(--cool-gray)] flex items-center justify-center ring-4 ring-white shadow-lg group-hover:scale-105 transition-transform duration-500">
                   {m.image ? (
                     <img
                       src={m.image}
                       alt={m.name}
-                      className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                      className="w-full h-full object-cover object-top"
                       loading="lazy"
                     />
                   ) : (
@@ -130,15 +130,17 @@ export function LeadershipSection() {
                     </span>
                   )}
                 </div>
-                <h4 className="text-lg font-bold text-[var(--text-primary)] mb-0.5">
-                  {m.name}
-                </h4>
-                <p className="text-[13px] font-bold text-[var(--brand)] mb-3">
-                  {m.title}
-                </p>
-                <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
-                  {m.bio}
-                </p>
+                <div className="text-center">
+                  <h4 className="text-lg font-bold text-[var(--text-primary)] mb-0.5">
+                    {m.name}
+                  </h4>
+                  <p className="text-[13px] font-bold text-[var(--brand)] mb-3">
+                    {m.title}
+                  </p>
+                  <p className="text-sm text-[var(--text-secondary)] leading-relaxed">
+                    {m.bio}
+                  </p>
+                </div>
               </div>
             ))}
           </div>

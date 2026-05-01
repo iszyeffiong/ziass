@@ -5,7 +5,6 @@ import {
   Outlet,
 } from '@tanstack/react-router'
 
-import { MoonStar, SunMedium } from 'lucide-react'
 import React from 'react'
 
 import appCss from '../styles.css?url'
@@ -35,6 +34,11 @@ export const Route = createRootRoute({
         rel: 'stylesheet',
         href: appCss,
       },
+      {
+        rel: 'icon',
+        type: 'image/png',
+        href: '/favicon.png?v=2',
+      },
     ],
     scripts: [
       {
@@ -52,11 +56,10 @@ export const Route = createRootRoute({
     ],
   }),
   component: RootComponent,
+  notFoundComponent: () => <NotFound />,
 })
 
 function RootComponent() {
-  const [theme, setTheme] = React.useState<'light' | 'dark'>('light')
-
   React.useEffect(() => {
     try {
       const stored = window.localStorage.getItem('ziass-theme')
@@ -65,36 +68,21 @@ function RootComponent() {
           ? stored
           : 'light'
 
-      setTheme(nextTheme)
       document.documentElement.classList.toggle('dark', nextTheme === 'dark')
       document.documentElement.style.colorScheme = nextTheme
     } catch (error) {
-      setTheme('light')
+      // Ignore
     }
-  }, [])
-
-  const toggleTheme = React.useCallback(() => {
-    setTheme((current) => {
-      const nextTheme = current === 'dark' ? 'light' : 'dark'
-
-      try {
-        window.localStorage.setItem('ziass-theme', nextTheme)
-      } catch (error) {
-        // Ignore storage failures.
-      }
-
-      document.documentElement.classList.toggle('dark', nextTheme === 'dark')
-      document.documentElement.style.colorScheme = nextTheme
-
-      return nextTheme
-    })
   }, [])
 
   return (
     <RootDocument>
-      <div className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-[#0B1120] dark:text-slate-100">
+      <div 
+        className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-[#0B1120] dark:text-slate-100"
+        suppressHydrationWarning
+      >
         <Navbar />
-        <main className="min-h-screen pt-24">
+        <main className="min-h-screen pt-24" suppressHydrationWarning>
           <Outlet />
         </main>
         <Footer />
@@ -111,7 +99,27 @@ function RootDocument({ children }: { children: React.ReactNode }) {
       <head>
         <HeadContent />
       </head>
-      <body>{children}</body>
+      <body suppressHydrationWarning>{children}</body>
     </html>
+  )
+}
+
+function NotFound() {
+  return (
+    <div className="flex flex-col items-center justify-center min-h-[60vh] px-6 text-center">
+      <div className="w-24 h-24 bg-[var(--brand-light)] rounded-3xl flex items-center justify-center mb-8 animate-bounce">
+        <span className="text-4xl font-bold text-[var(--brand)]">404</span>
+      </div>
+      <h1 className="text-4xl font-black mb-4">Page Not Found</h1>
+      <p className="text-[var(--text-muted)] max-w-md mb-8">
+        The page you are looking for doesn't exist or has been moved.
+      </p>
+      <a
+        href="/"
+        className="px-8 py-4 bg-[var(--brand)] text-white rounded-xl font-bold hover:shadow-lg hover:shadow-[var(--brand)]/20 transition-all"
+      >
+        Back to Home
+      </a>
+    </div>
   )
 }

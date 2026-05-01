@@ -2,25 +2,32 @@ import {
   ShieldCheck,
   Phone,
   Mail,
-  Facebook,
   Twitter,
   Instagram,
   Youtube,
+  Music2,
 } from 'lucide-react'
 import { Link } from '@tanstack/react-router'
+import { useState, useEffect } from 'react'
 
 export function Footer() {
+  const [year, setYear] = useState(2024)
+  
+  useEffect(() => {
+    setYear(new Date().getFullYear())
+  }, [])
+  
   return (
-    <footer className="border-t border-slate-200 bg-slate-50 pt-16 pb-8 dark:border-white/10 dark:bg-[#0B1120]">
-      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
-        <div className="space-y-6">
-          <div className="flex items-center gap-3">
-            <div className="w-8 h-8 bg-[var(--brand)] rounded-lg flex items-center justify-center font-bold text-white shadow-sm">
-              Z
-            </div>
-            <h2 className="text-xl font-bold text-[var(--text-primary)] tracking-tight">
-              ZIASS Limited
-            </h2>
+    <footer className="border-t border-slate-200 bg-slate-50 pt-16 pb-8 dark:border-white/10 dark:bg-[#0B1120]" suppressHydrationWarning>
+      <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16" suppressHydrationWarning>
+        <div className="space-y-6" suppressHydrationWarning>
+          <div className="flex items-center" suppressHydrationWarning>
+            <img 
+              src="/logo.png" 
+              alt="ZIASS Limited" 
+              className="h-8 w-auto object-contain"
+              suppressHydrationWarning
+            />
           </div>
           <p className="text-[var(--text-secondary)] text-sm leading-relaxed font-medium">
             Securing your business today for an innovative tomorrow. Global
@@ -28,26 +35,38 @@ export function Footer() {
           </p>
           <div className="flex gap-4">
             <a
-              href="#"
+              href="https://www.x.com/CyberZIASS"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--brand)] hover:border-[var(--brand)] transition-all dark:bg-white/5 dark:border-white/10 dark:text-white/60 dark:hover:border-white/20 dark:hover:text-white"
+              aria-label="X (Twitter)"
             >
               <Twitter size={18} />
             </a>
             <a
-              href="#"
+              href="https://www.tiktok.com/@cyberziass"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--brand)] hover:border-[var(--brand)] transition-all dark:bg-white/5 dark:border-white/10 dark:text-white/60 dark:hover:border-white/20 dark:hover:text-white"
+              aria-label="TikTok"
             >
-              <Facebook size={18} />
+              <Music2 size={18} />
             </a>
             <a
-              href="#"
+              href="https://www.instagram.com/cyber_ziass/"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--brand)] hover:border-[var(--brand)] transition-all dark:bg-white/5 dark:border-white/10 dark:text-white/60 dark:hover:border-white/20 dark:hover:text-white"
+              aria-label="Instagram"
             >
               <Instagram size={18} />
             </a>
             <a
-              href="#"
+              href="https://www.youtube.com/@cyberziass"
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-10 h-10 rounded-full bg-white border border-slate-200 shadow-sm flex items-center justify-center text-[var(--text-secondary)] hover:text-[var(--brand)] hover:border-[var(--brand)] transition-all dark:bg-white/5 dark:border-white/10 dark:text-white/60 dark:hover:border-white/20 dark:hover:text-white"
+              aria-label="YouTube"
             >
               <Youtube size={18} />
             </a>
@@ -138,11 +157,11 @@ export function Footer() {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-[var(--border-subtle)] flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-6 pt-8 border-t border-slate-200 dark:border-white/10 flex flex-col md:flex-row items-center justify-between gap-4" suppressHydrationWarning>
         <p className="text-sm text-[var(--text-muted)] font-medium">
-          © {new Date().getFullYear()} ZIASS Limited. All rights reserved.
+          © {year} ZIASS Limited. All rights reserved.
         </p>
-        <div className="flex gap-6 text-sm text-[var(--text-muted)] font-medium">
+        <div className="flex gap-6 text-sm text-[var(--text-muted)] font-medium" suppressHydrationWarning>
           <a
             href="#"
             className="hover:text-[var(--text-primary)] transition-colors"
