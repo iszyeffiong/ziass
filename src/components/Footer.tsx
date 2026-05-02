@@ -12,19 +12,19 @@ import { useState, useEffect } from 'react'
 
 export function Footer() {
   const [year, setYear] = useState(2024)
-  
+
   useEffect(() => {
     setYear(new Date().getFullYear())
   }, [])
-  
+
   return (
     <footer className="border-t border-slate-200 bg-slate-50 pt-16 pb-8 dark:border-white/10 dark:bg-[#0B1120]" suppressHydrationWarning>
       <div className="max-w-7xl mx-auto px-6 grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16" suppressHydrationWarning>
         <div className="space-y-6" suppressHydrationWarning>
           <div className="flex items-center" suppressHydrationWarning>
-            <img 
-              src="/logo.png" 
-              alt="ZIASS Limited" 
+            <img
+              src="/logo.png"
+              alt="ZIASS Limited"
               className="h-8 w-auto object-contain"
               suppressHydrationWarning
             />
@@ -145,13 +145,13 @@ export function Footer() {
               href="tel:+1234567890"
               className="flex items-center gap-2 text-sm text-[var(--brand)] hover:text-[var(--brand-dark)] font-medium transition-colors"
             >
-              <Phone size={14} /> +1 (234) 567-890
+              <Phone size={14} /> +1 (443) 985-3735
             </a>
             <a
-              href="mailto:ceo@ziass.com"
+              href="mailto:kazeem@ziass.ca"
               className="flex items-center gap-2 text-sm text-[var(--brand)] hover:text-[var(--brand-dark)] font-medium transition-colors"
             >
-              <Mail size={14} /> ceo@ziass.com
+              <Mail size={14} /> kazeem@ziass.ca
             </a>
           </div>
         </div>
