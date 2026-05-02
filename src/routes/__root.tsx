@@ -77,7 +77,7 @@ function RootComponent() {
 
   return (
     <RootDocument>
-      <div 
+      <div
         className="min-h-screen bg-white text-slate-900 transition-colors duration-300 dark:bg-[#0B1120] dark:text-slate-100"
         suppressHydrationWarning
       >

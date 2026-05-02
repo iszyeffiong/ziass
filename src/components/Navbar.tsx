@@ -63,12 +63,12 @@ export function Navbar() {
 
   return (
     <nav className="fixed top-0 inset-x-0 z-50 border-b border-slate-200/80 bg-white/90 backdrop-blur-xl transition-colors duration-300 dark:border-white/10 dark:bg-[#0B1120]/85" suppressHydrationWarning>
-      <div className="mx-auto flex h-[72px] max-w-7xl items-center justify-between px-6" suppressHydrationWarning>
+      <div className="mx-auto flex h-[80px] max-w-7xl items-center justify-between px-6" suppressHydrationWarning>
         <Link to="/" className="flex items-center">
           <img 
             src="/logo.png" 
             alt="ZIASS Limited" 
-            className="h-10 w-auto object-contain"
+            className="h-24 w-auto object-contain"
             suppressHydrationWarning
           />
         </Link>
